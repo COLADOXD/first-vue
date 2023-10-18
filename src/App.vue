@@ -2,24 +2,39 @@
 
 const name = "Vue dinamico";
 
-//Cuando se recorre un objeto primero es el valor, propiedad y al ultimo el index
-const fruitObj = {
-  name: "Manzana",
-  price: "$1.00",
-  description: "Una manzana",
-  stock: 0,
-}
+const arrayFrutas = [
+  {
+    name: "Manzana",
+    price: "$1.00",
+    description: "Una manzana",
+    stock: 0,
+  },
+  {
+    name: "Pera",
+    price: "$2.00",
+    description: "Una pera",
+    stock: 10,
+  },
+  {
+    name: "Naranja",
+    price: "$3.00",
+    description: "Una naranja",
+    stock: 20,
+  },
+];
 </script>
 
 <template>
   <h1>
     Hola {{ name.toUpperCase() }}
   </h1>
-  <p>{{ fruitObj }}</p>
+  <p>{{ arrayFrutas }}</p>
   <ul>
-    <li v-for="(value, property, index) in fruitObj" :key="value">
-      {{ `${index} - ${property}: ${value}` }}
-    </li>
+    <template v-for="(item, index) in arrayFrutas" :key="item.name">
+      <li v-if="item.stock > 0">
+        {{ item.name }} {{ item.price }}
+      </li>
+    </template>
   </ul>
 </template>
 
