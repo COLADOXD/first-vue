@@ -12,6 +12,7 @@ let counter = ref(0);
     Hola {{ name.toUpperCase() }}
   </h1>
   <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ counter }}</h2>
+  <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ counter }}</h2>
   <button @click="counter++">increment</button>
   <button @click="counter--">reduce</button>
   <button @click="counter = 0">reset</button>
