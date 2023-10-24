@@ -28,4 +28,5 @@ const classComputer = computed(() => {
   <button @click="counter++">increment</button>
   <button @click="counter--">reduce</button>
   <button @click="counter = 0">reset</button>
+  <button :disabled="false">add</button>
 </template>
