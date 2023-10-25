@@ -29,18 +29,23 @@ const addNumber = computed(() => {
 </script>
 
 <template>
-  <h1>
-    Hola {{ name.toUpperCase() }}
-  </h1>
-  <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ classComputer }}</h2>
-  <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ counter }}</h2>
-  <h2>{{ counterArray }}</h2><br>
-  <ul>
-    <li v-for="number in counterArray">
-      {{ number }}</li>
-  </ul>
-  <button @click="counter++">increment</button>
-  <button @click="counter--">reduce</button>
-  <button @click="counter = 0">reset</button>
-  <button :disabled="addNumber" @click="counterArray.push(counter)">add</button>
+  <div class="container text-center mt-5">
+    <h1>
+      Hola {{ name.toUpperCase() }}
+    </h1>
+
+    <div class="btn-group">
+      <button class="btn btn-success" @click="counter++">increment</button>
+      <button class="btn btn-danger" @click="counter--">reduce</button>
+      <button class="btn btn-secondary" @click="counter = 0">reset</button>
+      <button class="btn btn-primary" :disabled="addNumber" @click="counterArray.push(counter)">add</button>
+    </div>
+    <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ classComputer }}</h2>
+    <h2 :style="counter >= 0 ? 'color: green' : 'color: red'">{{ counter }}</h2>
+    <h2>{{ counterArray }}</h2><br>
+    <ul class="list-group mt-2">
+      <li class="list-group-item" v-for="number in counterArray">
+        {{ number }}</li>
+    </ul>
+  </div>
 </template>
